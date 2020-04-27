@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tick-Tack-Toe", "Tick-Tack-Toe\Tick-Tack-Toe.vcxproj", "{ECC26E48-5E9A-455E-835E-5774055BC998}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Debug|x64.ActiveCfg = Debug|x64
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Debug|x64.Build.0 = Debug|x64
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Debug|x86.ActiveCfg = Debug|Win32
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Debug|x86.Build.0 = Debug|Win32
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Release|x64.ActiveCfg = Release|x64
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Release|x64.Build.0 = Release|x64
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Release|x86.ActiveCfg = Release|Win32
+		{ECC26E48-5E9A-455E-835E-5774055BC998}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {684AE94D-C942-4822-B8FA-8774B14E0C10}
+	EndGlobalSection
+EndGlobal
