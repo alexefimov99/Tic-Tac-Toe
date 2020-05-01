@@ -22,13 +22,18 @@ int main()
 	do
 	{
 		Player(board, count, row, column, FName, SName);
-		Logic(board, FName, SName);
 		count++;
-		if (ch == 1)
+		Logic(board, FName, SName);
+		if (ch == 0)
+		{
 			Player(board, count, row, column, FName, SName);
+			count++;
+		}
 		else
-			AIPlayer(board, count, row, column, SName);
+		{
+			AIPlayer(board, SName);
+			count--;
+		}
 		Logic(board, FName, SName);
-		count++;
 	} while (row != 123 || column != 123);
 }

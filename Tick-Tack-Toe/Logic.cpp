@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Transportation.h"
 using namespace std;
 
 #define ROWS 3 
@@ -11,6 +12,7 @@ void Logic(char board[ROWS][COLUMNS], char *FName, char *SName)
 		(board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') || (board[2][0] == 'X' && board[1][1] == 'X' && board[0][2] == 'X') ||
 		(board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') || (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X'))
 	{
+		Draw(board);
 		cout << "WINNER IS " << FName << "!!!";
 		exit(0);
 	}
@@ -19,10 +21,13 @@ void Logic(char board[ROWS][COLUMNS], char *FName, char *SName)
 			 (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') || (board[2][0] == 'O' && board[1][1] == 'O' && board[0][2] == 'O') ||
 			 (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O') || (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O'))
 	{
+		Draw(board);
 		cout << "WINNER IS " << SName << "!!!";
 		exit(0);
 	}
 	else
+	{
+		Draw(board);
 		for (int i = 0, k = 0; i < ROWS; i++)
 			for (int j = 0; j < COLUMNS; j++)
 			{
@@ -30,9 +35,9 @@ void Logic(char board[ROWS][COLUMNS], char *FName, char *SName)
 					k++;
 				if (k == 9)
 				{
-					cout << "A DRAW WON!!!";
+					cout << "DRAW";
 					exit(0);
 				}
 			}
-
+	}
 }
