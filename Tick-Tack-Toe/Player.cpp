@@ -35,8 +35,10 @@ void Player(char board[ROWS][COLUMNS], int count, int row, int column, char *FNa
 void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 {
 	srand(time(0));
-	if (board[0][0] == 'X' && (board[1][0] == 'X' || board[0][1] == 'X' || board[1][1] == 'X') 
-							&& (board[2][0] != 'O' || board[0][2] != 'O' || board[2][2] != 'O'))
+	cout << "Move " << SName << endl;
+	if (board[0][0] == 'X' && ((board[1][0] == 'X' && board[2][0] != 'O') 
+							|| (board[0][1] == 'X' && board[0][2] != 'O') 
+							|| (board[1][1] == 'X' && board[2][2] != 'O')))
 	{
 		if (board[1][0] == 'X' && board[2][0] != 'X')
 			board[2][0] = 'O';
@@ -44,21 +46,25 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			board[0][2] = 'O';
 		else if (board[1][1] == 'X' && board[2][2] != 'X')
 			board[2][2] = 'O';
+		cout << "1";
 	}
 
-	else if (board[0][2] == 'X' && (board[1][2] == 'X' || board[0][1] == 'X' || board[1][1] == 'X') 
-								&& (board[2][2] != 'O' || board[0][0] != 'O' || board[2][1] != 'O'))
+	else if (board[0][2] == 'X' && ((board[1][2] == 'X' && board[2][2] != 'O') 
+								|| (board[0][1] == 'X' && board[0][0] != 'O') 
+								|| (board[1][1] == 'X' && board[2][0] != 'O')))
 	{
 		if (board[1][2] == 'X' && board[2][2] != 'X')
 			board[2][2] = 'O';
 		else if (board[0][1] == 'X' && board[0][0] != 'X')
 			board[0][0] = 'O';
-		else if (board[1][1] == 'X' && board[2][1] != 'X')
-			board[2][1] = 'O';
+		else if (board[1][1] == 'X' && board[2][0] != 'X')
+			board[2][0] = 'O';
+		cout << "2";
 	}
 
-	else if (board[2][2] == 'X' && (board[1][2] == 'X' || board[2][1] == 'X' || board[1][1] == 'X')
-								&& (board[2][0] != 'O' || board[0][2] != 'O' || board[0][0] != 'O'))
+	else if (board[2][2] == 'X' && ((board[1][2] == 'X' && board[0][2] != 'O') 
+								|| (board[2][1] == 'X' && board[2][0] != 'O') 
+								|| (board[1][1] == 'X' && board[0][0] != 'O')))
 	{
 		if (board[1][2] == 'X' && board[0][2] != 'X')
 			board[0][2] = 'O';
@@ -66,10 +72,12 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			board[2][0] = 'O';
 		else if (board[1][1] == 'X' && board[0][0] != 'X')
 			board[0][0] = 'O';
+		cout << "3";
 	}
 
-	else if (board[2][0] == 'X' && (board[1][0] == 'X' || board[2][1] == 'X' || board[1][1] == 'X') 
-								&& (board[0][0] != 'O' || board[2][2] != 'O' || board[0][2] != 'O'))
+	else if (board[2][0] == 'X' && ((board[1][0] == 'X' && board[0][0] != 'O') 
+								|| (board[2][1] == 'X' && board[2][2] != 'O') 
+								|| (board[1][1] == 'X' && board[0][2] != 'O')))
 	{
 		if (board[1][0] == 'X' && board[0][0] != 'X')
 			board[0][0] = 'O';
@@ -77,10 +85,12 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			board[2][2] = 'O';
 		else if (board[1][1] == 'X' && board[0][2] != 'X')
 			board[0][2] = 'O';
+		cout << "4";
 	}
 
-	else if (board[0][0] == 'X' && (board[2][0] == 'X' || board[0][2] == 'X' || board[2][2] == 'X') 
-								&& (board[1][0] != 'O' || board[0][1] != 'O' || board[1][1] != 'O'))
+	else if (board[0][0] == 'X' && ((board[2][0] == 'X' && board[1][0] != 'O')
+								|| (board[0][2] == 'X' && board[0][1] != 'O') 
+								|| (board[2][2] == 'X' && board[1][1] != 'O')))
 	{
 		if (board[2][0] == 'X' && board[1][0] != 'X')
 			board[1][0] = 'O';
@@ -88,33 +98,37 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			board[0][1] = 'O';
 		else if (board[2][2] == 'X' && board[1][1] != 'X')
 			board[1][1] = 'O';
+		cout << "5";
 	}
 
-	else if (board[2][2] == 'X' && (board[2][0] == 'X' || board[0][2] == 'X') 
-								&& (board[1][2] != 'O' || board[2][1] != 'O'))
+	else if (board[2][2] == 'X' && ((board[2][0] == 'X' && board[2][1] != 'O') 
+								|| (board[0][2] == 'X' && board[1][2] != 'O')))
 	{
 		if (board[2][0] == 'X' && board[2][1] != 'X')
 			board[2][1] = 'O';
 		else if (board[0][2] == 'X' && board[1][2] != 'X')
 			board[1][2] = 'O';
+		cout << "6";
 	}
 
 	else if (board[0][2] == 'X' && ((board[2][0] == 'X' && board[1][1] != 'O') 
-								 || (board[1][1] == 'X' && board[2][0] != 'O')))
+								|| (board[1][1] == 'X' && board[2][0] != 'O')))
 	{
 		if (board[2][0] == 'X' && board[1][1] != 'X')
 			board[1][1] = 'O';
 		else if (board[1][1] == 'X' && board[2][0] != 'X')
 			board[2][0] == 'O';
+		cout << "7";
 	}
 
 	else if (board[0][1] == 'X' && ((board[2][1] == 'X' && board[1][1] != 'O') 
-								 || (board[1][1] == 'X' && board[2][1] != 'O')))
+								|| (board[1][1] == 'X' && board[2][1] != 'O')))
 	{
 		if (board[2][1] == 'X' && board[1][1] != 'X')
 			board[1][1] = 'O';
 		else if (board[1][1] == 'X' && board[2][1] != 'X')
 			board[2][1] = 'O';
+		cout << "8";
 	}
 
 	else if (board[1][0] == 'X' && ((board[1][2] == 'X' && board[1][1] != 'O')
@@ -124,6 +138,7 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			board[1][1] = 'O';
 		else if (board[1][1] == 'X' && board[1][2] != 'X')
 			board[1][2] = 'O';
+		cout << "9";
 	}
 
 	else
@@ -133,6 +148,7 @@ void AIPlayer(char board[ROWS][COLUMNS], char *SName)
 			if (board[row][col] != 'O' && board[row][col] != 'X')
 			{
 				board[row][col] = 'O';
+				cout << "9";
 				break;
 			}
 		}
